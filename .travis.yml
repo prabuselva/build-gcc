@@ -64,4 +64,5 @@ env:
 #  - TARGET=ia16               PACKAGES="binutils gcc newlib"
 
 script:
-  - ./script/test.sh
+  - tar --version
+  - tar --help
