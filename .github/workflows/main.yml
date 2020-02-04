@@ -2,6 +2,7 @@ name: Test builds
 
 on:
   push:
+    branches-ignore: test-ppa
   pull_request:
   schedule:
     - cron: '0 0 */6 * *'
