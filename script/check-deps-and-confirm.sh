@@ -16,6 +16,9 @@ if [ -z ${TARGET} ]; then
   exit 1
 fi
 
+DST="${DESTDIR}${PREFIX}"
+export DESTDIR
+
 if [ -z ${IGNORE_DEPENDENCIES} ]; then
   for DEP in ${DEPS}; do
     case $DEP in
@@ -93,6 +96,7 @@ echo "You are about to build and install:"
 echo ""
 echo "With the following options:"
 [ ! -z ${IGNORE_DEPENDENCIES} ] && echo "    IGNORE_DEPENDENCIES=${IGNORE_DEPENDENCIES}"
+[ ! -z ${DESTDIR} ]             && echo "    DESTDIR=${DESTDIR}"
 echo "    TARGET=${TARGET}"
 echo "    HOST=${HOST}"
 echo "    BUILD=${BUILD}"
@@ -130,10 +134,10 @@ if [ ! -z ${AVRLIBC_VERSION} ]; then
 fi
 echo ""
 
-mkdir -p ${PREFIX}
+mkdir -p ${DST}
 
-if [ ! -d ${PREFIX} ] || [ ! -w ${PREFIX} ]; then
-  echo "WARNING: no write access to ${PREFIX}."
+if [ ! -d ${DST} ] || [ ! -w ${DST} ]; then
+  echo "WARNING: no write access to ${DST}."
   [ ! -z ${BUILD_BATCH} ] && exit 1
   echo "You may need to enter your sudo password several times during the build process."
   echo ""
