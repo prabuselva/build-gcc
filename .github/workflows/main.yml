@@ -10,30 +10,30 @@ jobs:
       matrix:
         os: [ ubuntu-latest, macos-latest ]
         env:
-          -
-            TARGET: i586-pc-msdosdjgpp
-            PACKAGES: binutils gcc djgpp-2.05
-          -
-            TARGET: i586-pc-msdosdjgpp
-            PACKAGES: binutils gcc djgpp-cvs
-          -
-            TARGET: i586-pc-msdosdjgpp
-            PACKAGES: gdb
-          -
-            TARGET: arm-eabi
-            PACKAGES: binutils gcc newlib
-          -
-            TARGET: arm-eabi
-            PACKAGES: gdb
+#          -
+#            TARGET: i586-pc-msdosdjgpp
+#            PACKAGES: binutils gcc djgpp-2.05
+#          -
+#            TARGET: i586-pc-msdosdjgpp
+#            PACKAGES: binutils gcc djgpp-cvs
+#          -
+#            TARGET: i586-pc-msdosdjgpp
+#            PACKAGES: gdb
+#          -
+#            TARGET: arm-eabi
+#            PACKAGES: binutils gcc newlib
+#          -
+#            TARGET: arm-eabi
+#            PACKAGES: gdb
+#          -
+#            TARGET: avr
+#            PACKAGES: binutils gcc avr-libc
           -
             TARGET: avr
-            PACKAGES: binutils gcc avr-libc
-          -
-            TARGET: avr
-            PACKAGES: gdb avarice simulavr avrdude
-          -
-            TARGET: ia16-elf
-            PACKAGES: binutils gcc newlib
+            PACKAGES: avrdude
+#          -
+#            TARGET: ia16-elf
+#            PACKAGES: binutils gcc newlib
 
     steps:
       - uses: actions/checkout@v2

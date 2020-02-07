@@ -83,7 +83,7 @@ if [ ! -z ${AVRDUDE_VERSION} ]; then
   cd build-avr/ || exit 1
   rm -rf *
   ../configure --prefix=${PREFIX} || exit 1
-  ${MAKE} -j${MAKE_JOBS} || exit 1
+  ${MAKE} -j${MAKE_JOBS} DESTDIR=/ || exit 1
   [ ! -z $MAKE_CHECK ] && ${MAKE} -j${MAKE_JOBS} -s check | tee ${BASE}/tests/avrdude.log
   echo "Installing AVRDUDE"
   ${SUDO} ${MAKE} -j${MAKE_JOBS} install || exit 1
