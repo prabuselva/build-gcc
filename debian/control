@@ -1,0 +1,96 @@
+Source: djgpp
+Section: devel
+Priority: optional
+Maintainer: jwt27 <jwjagersma@gmail.com>
+Build-Depends:
+    bash,
+    make,
+    autoconf,
+    automake,
+    unzip,
+    wget,
+    bison,
+    flex,
+    texinfo,
+    patch,
+    tar,
+    xz-utils,
+    bzip2,
+    gzip,
+    dos2unix,
+    zlib1g-dev,
+    debhelper (>= 11)
+Standards-Version: 4.1.2
+Homepage: https://github.com/jwt27/build-gcc
+
+Package: djgpp
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: djgpp-binutils, djgpp-gcc
+Suggests: djgpp-doc
+Description: DJGPP C library and utilities
+ Required for djgpp-gcc.
+
+Package: djgpp-doc
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: djgpp
+Description: Documentation for djgpp
+
+Package: djgpp-gcc
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, djgpp, djgpp-binutils
+Suggests: djgpp-gcc-doc, djgpp-gcc-extra
+Description: The GNU Compiler Collection
+ Cross-compiler targeting djgpp.
+
+Package: djgpp-gcc-doc
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: djgpp-gcc
+Conflicts: gcc-doc
+Description: Documentation for djgpp-gcc
+
+Package: djgpp-gcc-extra
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: djgpp-gcc
+Description: Extra files for gcc
+ Python pretty-printer script files for use with gdb.
+ May conflict with host gcc.
+
+Package: djgpp-binutils
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: djgpp
+Suggests: djgpp-binutils-doc
+Description: GNU Binutils
+ Linker, assembler and other binary utilities targeting djgpp.
+
+Package: djgpp-binutils-doc
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: djgpp-binutils
+Conflicts: binutils-doc
+Description: Documentation for djgpp-binutils.
+
+Package: djgpp-gdb
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: djgpp-gdb-doc, djgpp-gdb-extra, djgpp-gcc-extra
+Description: GNU Debugger
+ Used to debug djgpp programs over a serial connection.
+
+Package: djgpp-gdb-doc
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: djgpp-gdb
+Conflicts: gdb-doc
+Description: Documentation for djgpp-gdb
+
+Package: djgpp-gdb-extra
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: djgpp-gdb
+Description: Extra files for djgpp-gdb
+ May conflict with host gdb.
