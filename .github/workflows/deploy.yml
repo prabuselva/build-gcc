@@ -31,3 +31,14 @@ jobs:
       - name: Test build
         run: |
           debuild -us -uc
+
+      - name: Move .deb files
+        run: |
+          mkdir -p debs
+          mv ../*.deb ../*.ddeb debs/
+
+      - name: Upload .deb files
+        uses: actions/upload-artifact@v1
+        with:
+          name: binaries
+          path: debs
