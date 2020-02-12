@@ -1,4 +1,4 @@
-Source: djgpp
+Source: djgpp-toolchain
 Section: devel
 Priority: optional
 Maintainer: jwt27 <jwjagersma@gmail.com>
