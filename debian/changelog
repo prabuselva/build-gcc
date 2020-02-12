@@ -1,4 +1,4 @@
-djgpp-toolchain (0000) unstable; urgency=medium
+djgpp-toolchain (0.20200210.0+gcc9.2.0+bnu2.33.1+gdb8.2.1+djcvs) unstable; urgency=medium
 
   * Initial Release.
 
