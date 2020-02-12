@@ -34,63 +34,63 @@ Description: DJGPP C library and utilities
 Package: djgpp-doc
 Architecture: all
 Depends: ${misc:Depends}
-Recommends: djgpp
+Suggests: djgpp
 Description: Documentation for djgpp
 
-Package: djgpp-gcc
+Package: gcc-djgpp
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, djgpp, djgpp-binutils
-Suggests: djgpp-gcc-doc, djgpp-gcc-extra
-Description: The GNU Compiler Collection
- Cross-compiler targeting djgpp.
+Depends: ${shlibs:Depends}, ${misc:Depends}, djgpp, binutils-djgpp
+Suggests: gcc-djgpp-doc, gcc-djgpp-extra
+Description: GNU Compiler Collection
+ Cross-compiler targeting djgpp. Supports C and C++.
 
-Package: djgpp-gcc-doc
+Package: gcc-djgpp-doc
 Architecture: all
 Depends: ${misc:Depends}
-Recommends: djgpp-gcc
+Suggests: gcc-djgpp
 Conflicts: gcc-doc
 Description: Documentation for djgpp-gcc
 
-Package: djgpp-gcc-extra
+Package: gcc-djgpp-extra
 Architecture: all
 Depends: ${misc:Depends}
-Recommends: djgpp-gcc
+Recommends: gcc-djgpp
 Description: Extra files for gcc
  Python pretty-printer script files for use with gdb.
  May conflict with host gcc.
 
-Package: djgpp-binutils
+Package: binutils-djgpp
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Recommends: djgpp
-Suggests: djgpp-binutils-doc
+Suggests: binutils-djgpp-doc
 Description: GNU Binutils
  Linker, assembler and other binary utilities targeting djgpp.
 
-Package: djgpp-binutils-doc
+Package: binutils-djgpp-doc
 Architecture: all
 Depends: ${misc:Depends}
-Recommends: djgpp-binutils
+Suggests: binutils-djgpp
 Conflicts: binutils-doc
 Description: Documentation for djgpp-binutils.
 
-Package: djgpp-gdb
+Package: gdb-djgpp
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Suggests: djgpp-gdb-doc, djgpp-gdb-extra, djgpp-gcc-extra
+Suggests: gdb-djgpp-doc, gdb-djgpp-extra, gcc-djgpp-extra
 Description: GNU Debugger
  Used to debug djgpp programs over a serial connection.
 
-Package: djgpp-gdb-doc
+Package: gdb-djgpp-doc
 Architecture: all
 Depends: ${misc:Depends}
-Recommends: djgpp-gdb
+Suggests: gdb-djgpp
 Conflicts: gdb-doc
 Description: Documentation for djgpp-gdb
 
-Package: djgpp-gdb-extra
+Package: gdb-djgpp-extra
 Architecture: all
 Depends: ${misc:Depends}
-Recommends: djgpp-gdb
+Recommends: gdb-djgpp
 Description: Extra files for djgpp-gdb
  May conflict with host gdb.
