@@ -6,6 +6,8 @@ build:
 	./build-djgpp.sh --batch --no-download --prefix=/usr --destdir=`pwd`/install $(PACKAGES)
 
 install:
+	sed -i 's/\/usr\/bin\/i386/usr\/bin\/i386/' install/usr/bin/i386-pc-msdosdjgpp-link-i586
+	cd install && ./usr/bin/i386-pc-msdosdjgpp-link-i586
 	cp -rp install/* $(DESTDIR)/
 
 clean:
